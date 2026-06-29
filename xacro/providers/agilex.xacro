@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  Agilex provider: dispatches on `arm` to the bundled Agilex robot
+  description.
+
+  Supported arms:
+    - aloha  : 4-arm Aloha mobile manipulation platform
+    - piper  : 6-DOF piper arm (single-arm, optionally with parallel gripper)
+
+  Usage:
+    xacro robot.xacro robot_model:=agilex arm:=aloha
+    xacro robot.xacro robot_model:=agilex arm:=piper
+    xacro robot.xacro robot_model:=agilex arm:=piper gripper:=no_gripper
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="arm"     default="aloha" />
+  <xacro:arg name="gripper" default="with_gripper" />
+
+  <xacro:property name="arm"     value="$(arg arm)" />
+  <xacro:property name="gripper" value="$(arg gripper)" />
+
+  <xacro:if value="${'aloha' == arm}">
+    <xacro:include filename="$(find genie_sim_robot_model)/robots/agilex/aloha/aloha.urdf.xacro" />
+  </xacro:if>
+
+  <xacro:if value="${'piper' == arm}">
+    <xacro:if value="${'with_gripper' == gripper}">
+      <xacro:include filename="$(find genie_sim_robot_model)/robots/agilex/piper/piper.urdf.xacro" />
+    </xacro:if>
+    <xacro:if value="${'no_gripper' == gripper}">
+      <xacro:include filename="$(find genie_sim_robot_model)/robots/agilex/piper/piper_no_gripper.urdf.xacro" />
+    </xacro:if>
+  </xacro:if>
+
+</robot>

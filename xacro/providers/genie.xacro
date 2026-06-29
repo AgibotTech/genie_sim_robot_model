@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+  Genie provider: dispatches on `body`, `arm`, and `gripper`.
+
+  Supported configurations:
+    body=g2  arm=crs   gripper=omnipicker
+    body=g2  arm=crs   gripper=swiftpicker
+    body=g2  arm=crsB  gripper=omnipicker
+    body=g2  arm=crsB  gripper=swiftpicker
+
+  Usage:
+    xacro robot.xacro robot_model:=genie body:=g2 arm:=crs   gripper:=omnipicker
+    xacro robot.xacro robot_model:=genie body:=g2 arm:=crs   gripper:=swiftpicker
+    xacro robot.xacro robot_model:=genie body:=g2 arm:=crsB  gripper:=omnipicker
+    xacro robot.xacro robot_model:=genie body:=g2 arm:=crsB  gripper:=swiftpicker
+
+  Naming note: the gripper selector is ``gripper`` (matching the
+  convention used by ``agilex.xacro`` and ``universal_robots.xacro``).
+  The CMakeLists.txt build rules and the top-level ``robot.xacro``
+  docstring also pass ``gripper:=...`` for the genie entries.  An
+  earlier revision used the ``variant`` arg name but never matched
+  what the build passed, so every generated g2 URDF defaulted to
+  ``omnipicker`` regardless of what the build config requested.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:arg name="body"    default="g2" />
+  <xacro:arg name="arm"     default="crs" />
+  <xacro:arg name="gripper" default="omnipicker" />
+
+  <xacro:property name="body"    value="$(arg body)" />
+  <xacro:property name="arm"     value="$(arg arm)" />
+  <xacro:property name="gripper" value="$(arg gripper)" />
+
+  <xacro:if value="${'g2' == body}">
+    <xacro:if value="${'crs' == arm}">
+      <xacro:if value="${'omnipicker' == gripper}">
+        <xacro:include filename="$(find genie_sim_robot_model)/robots/genie/g2/g2_crs_omnipicker.urdf.xacro" />
+      </xacro:if>
+      <xacro:if value="${'swiftpicker' == gripper}">
+        <xacro:include filename="$(find genie_sim_robot_model)/robots/genie/g2/g2_crs_swiftpicker.urdf.xacro" />
+      </xacro:if>
+    </xacro:if>
+    <xacro:if value="${'crsB' == arm}">
+      <xacro:if value="${'omnipicker' == gripper}">
+        <xacro:include filename="$(find genie_sim_robot_model)/robots/genie/g2/g2_crsB_omnipicker.urdf.xacro" />
+      </xacro:if>
+      <xacro:if value="${'swiftpicker' == gripper}">
+        <xacro:include filename="$(find genie_sim_robot_model)/robots/genie/g2/g2_crsB_swiftpicker.urdf.xacro" />
+      </xacro:if>
+    </xacro:if>
+  </xacro:if>
+
+</robot>
