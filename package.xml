@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>genie_sim_robot_model</name>
+  <version>3.2.0</version>
+  <description>
+    Universal robot model abstraction layer for multi-robot xacro dispatch.
+    AgiBot-authored content — the xacro dispatch layer, the launch/script
+    tooling, and the Genie G2 robot description — is Apache-2.0.
+    Bundled third-party vendor descriptions (Franka FR3, Universal Robots
+    UR5, ARX, Agilex Piper/Aloha, Wuji hand) each retain their upstream
+    license; see THIRD_PARTY_NOTICES for per-robot terms (Apache-2.0,
+    BSD-3-Clause, MIT, UR graphical-documentation T&amp;Cs, …).
+  </description>
+  <maintainer email="yangwendisheng@agibot.com"> Genie Sim Team </maintainer>
+  <license file="LICENSE">Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>genie_sim_common</depend>
+  <depend>xacro</depend>
+  <depend>urdf</depend>
+
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
