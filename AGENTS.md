@@ -12,6 +12,15 @@ Third-party notices: [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES)
 
 ---
 
+## Repository boundary
+
+This package is maintained in its own Git repository and pinned by Genie Sim
+as a submodule at its existing ROS package path. Commit package changes here
+before updating the parent gitlink. Keep the package version independent of
+the parent release command, and preserve measured sysid files exactly.
+Runtime/schema documentation links assume the package is inside the Genie Sim
+ROS workspace. Generated root `urdf/` and `.ament_dev/` files are build outputs.
+
 ## Support tiers
 
 The GenieSim stack actively develops and validates **AgiBot Genie G2 only**.

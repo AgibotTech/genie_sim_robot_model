@@ -4,6 +4,20 @@ Robot descriptions for GenieSim — xacro / URDF sources, meshes (`.dae`,
 `.STL`, `.obj`), pre-baked USDs, and the mesh-prep tools that keep
 those assets clean enough for Isaac Sim's URDF→USD importer.
 
+## Repository ownership
+
+This repository is maintained independently. Genie Sim pins a commit of it as
+its `source/geniesim_ros/src/ros_ws/src/genie_sim_robot_model` Git submodule.
+Keep that package path stable so ROS package discovery and xacro resource
+lookups continue to work.
+
+Commit and publish description changes here first, then update the submodule
+commit in Genie Sim. This repository owns its `package.xml` version; parent
+release commands must not rewrite it. Generated root `urdf/` and `.ament_dev/`
+files remain untracked. Runtime integration links in this guide assume the
+package is checked out in the Genie Sim ROS workspace, with `genie_sim_common`
+and the runtime packages available alongside it.
+
 ## Robots shipped
 
 | Tier | Robots | What it means |
