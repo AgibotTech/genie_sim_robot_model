@@ -21,6 +21,12 @@ the parent release command, and preserve measured sysid files exactly.
 Runtime/schema documentation links assume the package is inside the Genie Sim
 ROS workspace. Generated root `urdf/` and `.ament_dev/` files are build outputs.
 
+## Research and attribution
+
+Use the [README research reference and citation](README.md#research-reference)
+for identification methodology. Preserve original Git authorship and immutable
+sysid records when adding research references.
+
 ## Support tiers
 
 The GenieSim stack actively develops and validates **AgiBot Genie G2 only**.

@@ -104,3 +104,16 @@ establish runtime application or hardware matching. Use the
 [bringup pass criteria](../../genie_sim_bringup/README.md#pass-criteria-matrix) for
 fresh/cached assembly, commands, state, cameras and stability. Record overlay IDs,
 image/source identity, initial pose, clamp and measured tolerance with each run.
+
+## 6. Research reference
+
+[Yang et al. (2026)](https://arxiv.org/abs/2611.15020), Section IV-A and
+Appendix C, distinguish mechanical identification, recorded-data reconstruction
+and independent teleoperation evaluation. Servo settings, command shaping and
+friction conventions belong to their respective experiments.
+
+To relate a shipped overlay to a reported result, record its commit, overlay ID
+and runtime configuration. The YAML remains authoritative for this checkout.
+Section IV-A1 expresses armature in joint coordinates; applying another squared
+gear-ratio factor would double-count that conversion. See the
+[README citation](../README.md#citation).

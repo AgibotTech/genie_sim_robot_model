@@ -15,6 +15,9 @@ validator, the application channels and the invariants are the
 define the supported fields and read-only inspection commands. See the
 [joint parameter reference](../../../../../docs/JOINT_PARAMS.md) for runtime application.
 
+Research context: [Yang et al. (2026)](https://arxiv.org/abs/2611.15020);
+see the [parameter reference](SYSID_PARAMS.md#6-research-reference) for scope.
+
 ## Where they live
 
 ```

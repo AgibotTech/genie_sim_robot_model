@@ -4,6 +4,14 @@ Robot descriptions for GenieSim — xacro / URDF sources, meshes (`.dae`,
 `.STL`, `.obj`), pre-baked USDs, and the mesh-prep tools that keep
 those assets clean enough for Isaac Sim's URDF→USD importer.
 
+## Research reference
+
+For G2 crsB identification and evaluation context, see Di Yang et al.,
+[**Genie Sim Benchmark: Real-to-Sim Fidelity and Evaluation**](https://arxiv.org/abs/2611.15020)
+(2026), Section IV-A and Appendix C. See the
+[parameter reference](robots/SYSID_PARAMS.md#6-research-reference) for how this
+relates to the shipped records, and [Citation](#citation) for BibTeX.
+
 ## Repository ownership
 
 This repository is maintained independently. Genie Sim pins a commit of it as
@@ -62,6 +70,11 @@ scripts/                              # mesh-prep / diagnostic tools
     recompute_inertia.py, copy_dae_material.py, …
 ```
 
+## URDF conversion
+
+To convert URDF models to USD or MJCF, use the tools provided by
+`geniesim_ros` in the [Genie Sim repository](https://github.com/AgibotTech/genie_sim).
+
 ## Mesh-prep tools
 
 DCC exports rarely arrive in a state the Isaac Sim importer is happy
@@ -100,3 +113,22 @@ Run these once after every batch of DCC exports.
 See [AGENTS.md](AGENTS.md) for the robot composition pattern, mesh
 conventions per format (`.dae` / `.obj` / `.STL`), the Isaac Sim
 URDF→USD path each importer takes, and the gotchas the tools fix.
+
+## Citation
+
+When referencing the identification and evaluation methodology, cite:
+
+```bibtex
+@article{yang2026geniesimfidelity,
+  title = {Genie Sim Benchmark: Real-to-Sim Fidelity and Evaluation},
+  author = {Yang, Di and Huang, Da and Lv, Yang and Yang, Fan and Lu, Yi
+            and Xing, Zheyuan and Guo, Linting and Shen, Jiaen and Sun, Wenjun
+            and Yao, Maoqing and Wang, Qian},
+  journal = {arXiv preprint arXiv:2611.15020},
+  year = {2026},
+  eprint = {2611.15020},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.RO},
+  url = {https://arxiv.org/abs/2611.15020}
+}
+```
