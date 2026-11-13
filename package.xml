@@ -5,14 +5,15 @@
   <version>3.6.0</version>
   <description>
     Universal robot model abstraction layer for multi-robot xacro dispatch.
-    Bundles vendor robot descriptions (Franka FR3, Universal Robots UR5,
-    ARX, Aloha, AgiBot Genie G2, …) — each retains its upstream license;
-    see THIRD_PARTY_NOTICES for per-robot terms (Apache-2.0, BSD-3-Clause,
-    UR graphical-documentation T&amp;Cs, …). The xacro dispatch layer
-    itself is MPL-2.0.
+    AgiBot-authored content — the xacro dispatch layer, the launch/script
+    tooling, and the Genie G2 robot description — is Apache-2.0.
+    Bundled third-party vendor descriptions (Franka FR3, Universal Robots
+    UR5, ARX, Agilex Piper/Aloha, Wuji hand) each retain their upstream
+    license; see THIRD_PARTY_NOTICES for per-robot terms (Apache-2.0,
+    BSD-3-Clause, MIT, UR graphical-documentation T&amp;Cs, …).
   </description>
   <maintainer email="yangwendisheng@agibot.com"> Genie Sim Team </maintainer>
-  <license file="LICENSE">Mozilla Public License Version 2.0</license>
+  <license file="LICENSE">Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>

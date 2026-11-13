@@ -3,9 +3,11 @@
 Robot description package — xacro/URDF sources and pre-baked USD assets for
 all robots supported by the GenieSim stack.
 
-Source: [source/geniesim_ros/src/ros_ws/src/genie_sim_robot_model/](.)
-License: [Mozilla Public License Version 2.0](../../../../LICENSE) (per-robot upstream licenses — see [`THIRD_PARTY_NOTICES`](THIRD_PARTY_NOTICES))
-Third-party notices: [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES)
+License: [Apache License 2.0](LICENSE) — covers all AgiBot-authored
+content, including the Genie G2 assets under `robots/genie/g2/`.
+Bundled vendor robots retain their own upstream licenses (Apache-2.0,
+BSD-3-Clause, MIT, UR graphical-documentation T&Cs) — see
+[`THIRD_PARTY_NOTICES`](THIRD_PARTY_NOTICES) for per-robot terms.
 
 **Maintenance contract**: when you add a robot, update `robots/`, `xacro/`,
 `THIRD_PARTY_NOTICES`, and this file in the same diff.

@@ -1,11 +1,18 @@
 THIRD-PARTY NOTICES FOR genie_sim_robot_model
 ==============================================
 
-This package contains robot models, meshes, and URDF/xacro descriptions
-originating from third-party vendors and open-source projects.
-Each robot subdirectory retains the license of its upstream source.
-The Agibot-authored xacro dispatch layer (xacro/robot.xacro and
-xacro/providers/*.xacro) is covered by the package-level license.
+This package is licensed under the Apache License 2.0 (see LICENSE).
+That covers all AgiBot-authored content, including the xacro dispatch
+layer (xacro/robot.xacro, xacro/providers/*.xacro), the Python helpers
+under genie_sim_robot_model/ and scripts/, the launch and rviz configs,
+and the AgiBot Genie G2 robot assets under robots/genie/g2/.
+
+The package also bundles robot models, meshes, and URDF/xacro
+descriptions originating from third-party vendors and open-source
+projects. Each such robot subdirectory retains the license of its
+upstream source, enumerated below. Where a third-party license applies
+to files inside an otherwise AgiBot-authored directory, the section
+below states the exact paths (see section 8, Wuji Hand).
 
 ---------------------------------------------------------------------------
 1. Franka Research 3 (FR3)
@@ -104,16 +111,17 @@ xacro/providers/*.xacro) is covered by the package-level license.
    Directory:  robots/genie/g2/
                (excluding robots/genie/g2/meshes/gripper/wuji/ and the
                 wuji xacro adapter — see section 8)
-   License:    Proprietary — AgiBot Inc.
-   Copyright:  Copyright (c) AgiBot Inc.
-   Notice:     The xacro descriptions, mesh files (.STL, .FBX, .DAE),
+   License:    Apache License 2.0
+   Copyright:  Copyright (c) 2023-2026 AgiBot Inc.
+   Notice:     First-party AgiBot content, not third-party — listed here
+               so that every directory under robots/ has an entry.
+               The xacro descriptions, mesh files (.STL, .FBX, .DAE),
                and collision geometry for the G2 robot body (T2 variant),
                CRS/CRS-B dual arms, Omnipicker gripper, and SwiftPicker
-               gripper originate from AgiBot proprietary robot description
-               assets. These assets are provided here under AgiBot's
-               authorization for use within the GenieSim simulation stack.
-               Redistribution outside of genie_sim_robot_model requires
-               explicit written permission from AgiBot Inc.
+               gripper are authored by AgiBot Inc. and released under the
+               Apache License 2.0 — the same terms as the package-level
+               license. See LICENSE (and robots/genie/LICENSE) for the
+               full text.
                Contact: genie@agibot.com
 
 ---------------------------------------------------------------------------
@@ -151,17 +159,24 @@ xacro/providers/*.xacro) is covered by the package-level license.
 IMPORTANT
 ---------
 
-If you redistribute this package or any of the third-party robot
-models contained herein, you MUST:
+If you redistribute this package or any of the robot models contained
+herein, you MUST:
 
   1. Retain all copyright notices and license texts.
-  2. Comply with the specific license terms of each robot model
-     (e.g., Apache-2.0 for Franka, BSD-3-Clause for UR/Robotiq,
+  2. Comply with the Apache License 2.0 for the AgiBot-authored
+     content, including the Genie G2 assets under robots/genie/g2/:
+     retain the LICENSE file, keep existing copyright and attribution
+     notices, and state any changes you make to those files.
+  3. Comply with the specific license terms of each third-party robot
+     model (Apache-2.0 for Franka, BSD-3-Clause for UR/Robotiq,
      MIT for Agilex Piper and Wuji Hand, BSD for ARX).
-  3. For UR mesh files, comply with the UR Graphical Documentation
+  4. For UR mesh files, comply with the UR Graphical Documentation
      T&Cs, including the attribution requirement:
      "© 2023 Universal Robots A/S. Use hereof is subject to
      Universal Robots A/S' Terms and Conditions for Use of
      Graphical Documentation."
-  4. For robots without an explicit license (e.g., Agilex Aloha),
+  5. For robots without an explicit license (e.g., Agilex Aloha),
      contact the vendor before commercial redistribution.
+  6. Retain the Wuji Technology MIT notice (section 8) for the
+     dexterous-hand meshes and xacro macros, even though they sit
+     inside the otherwise Apache-2.0 robots/genie/g2/ tree.
